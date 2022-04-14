@@ -51,11 +51,16 @@ def get_ship_location():
 
 
 ''' 
-Function to count how many times the ship is hit and game over when 5 hits
+Function to count how many ships are hit and game over when 5 ships are hit
 '''
 
 def count_hit_ships():
-    pass
+    count = 0
+    for row in board:
+        for column in row:
+            if column == "X":
+                count += 1
+    return count
 
 create_ships()
 turns=10
