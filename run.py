@@ -11,7 +11,15 @@ def board():
     pass
 
 ''' 
+Function to create the ships
+'''
+
+def create_ships():
+    pass
+
+''' 
 Function to ask user what column and row they want to place the ship on
 '''
+
 def get_ship_location():
     pass
