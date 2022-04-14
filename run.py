@@ -1,3 +1,12 @@
+# Legend
+# X for placing ship and hit battleship
+# ' ' for available space
+# '-' for missed shot
+
+
+
+from random import randint
+
 
 # Board for holding our ships locations
 MY_BOARD = [[' '] * 8 for x in range(8)]
@@ -19,9 +28,12 @@ def print_board(board):
 Function to create the ships
 '''
 
-def create_ships():
-    pass
-
+def create_ships(board):
+    for ship in range(5):
+        ship_row, ship_column = randint(0, 7), randint(0, 7)
+        while board[ship_row][ship_column] == 'X':
+            ship_row, ship_column = randint(0, 7), randint(0, 7)
+        boar[ship_row][ship_column] = 'X'
 ''' 
 Function to ask user what column and row they want to place the ship on
 '''
