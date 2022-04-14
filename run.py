@@ -1,3 +1,7 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+
+# Board for holding our ships locations
+MY_BOARD = [[' '] * 8 for x in range(8)]
+
+# Board for holding our guesses including hits and misses
+GUESS_BOARD = [[' '] * 8 for x in range(8)]
+
