@@ -39,7 +39,15 @@ Function to ask user what column and row they want to place the ship on
 '''
 
 def get_ship_location():
-    pass
+    row = input("Enter the row of the ship: ").upper()
+    while row not in "12345678":
+        print('Not an appropriate choice, please select a valid row')
+        row = input("Enter the row of the ship: ").upper()
+    column = input("Enter the column of the ship: ").upper()
+    while column not in "ABCDEFGH":
+        print('Not an appropriate choice, please select a valid column')
+        column = input("Enter the column of the ship: ").upper()
+    return int(row) - 1, letters_to_numbers[column]
 
 
 ''' 
