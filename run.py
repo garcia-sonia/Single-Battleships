@@ -64,6 +64,23 @@ def count_hit_ships():
 
 create_ships(MY_BOARD)
 turns=10
-print_board(MY_BOARD)
-print_board(GUESS_BOARD)
-# while turns > 0:
+while turns > 0:
+        print('Guess a ship\'s location')
+        print_board(GUESS_BOARD)
+        row, column = get_ship_location()
+        if GUESS_BOARD[row][column] == "-":
+            print("You guessed that one already.")
+        elif MY_BOARD[row][column] == "X":
+            print("Hit!")
+            GUESS_BOARD[row][column] = "X" 
+            turns -= 1  
+        else:
+            print("Miss...")
+            GUESS_BOARD[row][column] = "-"   
+            turns -= 1     
+        if count_hit_ships(GUESS_BOARD) == 5:
+            print("You win!")
+            break
+        print("You have " + str(turns) + " turns left")
+        if turns == 0:
+            print("You ran out of turns")
