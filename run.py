@@ -32,7 +32,7 @@ def create_ships(board):
     for ship in range(5):
         ship_row, ship_column = randint(0, 7), randint(0, 7)
         while board[ship_row][ship_column] == 'X':
-            ship_row, ship_column = randint(0, 7), randint(0, 7)
+            ship_row, ship_column = get_ship_location()
         board[ship_row][ship_column] = 'X'
 ''' 
 Function to ask user what column and row they want to place the ship on
@@ -54,7 +54,7 @@ def get_ship_location():
 Function to count how many ships are hit and game over when 5 ships are hit
 '''
 
-def count_hit_ships():
+def count_hit_ships(board):
     count = 0
     for row in board:
         for column in row:
