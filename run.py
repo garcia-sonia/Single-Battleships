@@ -9,10 +9,12 @@ from random import randint
 
 while True:
     answer = input('Would you like to play Battleships? (yes/no) ')
+
     if answer.lower().strip() == 'no':
         print('That\'s Ok, maybe another time :)')
         print('Bye bye now')
         break
+
     if answer.lower().strip() == 'yes':
 
         # Board for holding our ships locations
@@ -46,7 +48,7 @@ while True:
         '''
 
         def get_ship_location():
-            row = input("Enter the row of the ship: ").upper()
+            row = input("\nEnter the row of the ship: ").upper()
             while row not in "12345678":
                 print('Not an appropriate choice, please select a valid row')
                 row = input("Enter the row of the ship: ").upper()
@@ -74,23 +76,23 @@ while True:
             create_ships(MY_BOARD)
             turns = 10
         while turns > 0:
-            print('Guess a ship\'s location')
+            print('Guess a ship\'s location:\n')
             print_board(GUESS_BOARD)
             row, column = get_ship_location()
             if GUESS_BOARD[row][column] == "-":
                 print("You guessed that one already.")
             elif MY_BOARD[row][column] == "X":
-                print("Hit!")
+                print("\nIT\'S A HIT! WAY TO GO!")
                 GUESS_BOARD[row][column] = "X" 
                 turns -= 1  
             else:
-                print("Miss...")
+                print("\nYOU MISSED...")
                 GUESS_BOARD[row][column] = "-"   
                 turns -= 1     
             if count_hit_ships(GUESS_BOARD) == 5:
-                print("You win!")
+                print("\nYOU WIN!")
                 break
-            print("You have " + str(turns) + " turns left")
+            print("You have " + str(turns) + " turns left\n")
             if turns == 0:
-                print("You ran out of turns")
+                print("YOU RAN OUT OF TURNS")
                 break
