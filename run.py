@@ -23,3 +23,11 @@ Function to ask user what column and row they want to place the ship on
 
 def get_ship_location():
     pass
+
+
+''' 
+Function to count how many times the ship is hit and game over when 5 hits
+'''
+
+def count_hit_ships():
+    pass
