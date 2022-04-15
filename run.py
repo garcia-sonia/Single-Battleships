@@ -16,23 +16,18 @@ while True:
         break
 
     if answer.lower().strip() == 'yes':
-
+        
         # Board for holding our ships locations
-        MY_BOARD = [[' '] * 8 for x in range(8)]
+        MY_BOARD = [[' '] * 5 for x in range(5)]
+
         # Board for holding our guesses including hits and misses
-        MY_GUESS_BOARD = [[' '] * 8 for i in range(8)]
+        GUESS_BOARD = [[' '] * 5 for i in range(5)]
 
-        # Board for holding computer's ships locations
-        COMPUTER_BOARD = [[" "] * 8 for i in range(8)]
-        # Board for holding computer's guesses
-        COMPUTER_GUESS_BOARD = [[" "] * 8 for i in range(8)]
-
-        Length_of_ships = [2,3,3,4,5] 
-        letters_to_numbers = {'A':0, 'B':1, 'C':2, 'D':3, 'E':4, 'F':5, 'G':6, 'H':7}
+        letters_to_numbers = {'A':0, 'B':1, 'C':2, 'D':3, 'E':4}
 
         def print_board(board):
-            print('  A B C D E F G H')
-            print('  ---------------')
+            print('  A B C D E')
+            print('  ---------')
             row_number = 1
             for row in board:
                 print("%d|%s|" % (row_number, "|".join(row)))
@@ -44,7 +39,7 @@ while True:
 
         def create_ships(board):
             for ship in range(5):
-                ship_row, ship_column = randint(0, 7), randint(0, 7)
+                ship_row, ship_column = randint(0, 4), randint(0, 4)
                 while board[ship_row][ship_column] == 'X':
                     ship_row, ship_column = get_ship_location()
                 board[ship_row][ship_column] = 'X'
@@ -54,11 +49,11 @@ while True:
 
         def get_ship_location():
             row = input("\nEnter the row of the ship: ").upper()
-            while row not in "12345678":
+            while row not in "12345":
                 print('Not an appropriate choice, please select a valid row')
                 row = input("Enter the row of the ship: ").upper()
             column = input("Enter the column of the ship: ").upper()
-            while column not in "ABCDEFGH":
+            while column not in "ABCDE":
                 print('Not an appropriate choice, please select a valid column')
                 column = input("Enter the column of the ship: ").upper()
             return int(row) - 1, letters_to_numbers[column]
