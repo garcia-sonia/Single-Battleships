@@ -19,10 +19,15 @@ while True:
 
         # Board for holding our ships locations
         MY_BOARD = [[' '] * 8 for x in range(8)]
-
         # Board for holding our guesses including hits and misses
-        GUESS_BOARD = [[' '] * 8 for i in range(8)]
+        MY_GUESS_BOARD = [[' '] * 8 for i in range(8)]
 
+        # Board for holding computer's ships locations
+        COMPUTER_BOARD = [[" "] * 8 for i in range(8)]
+        # Board for holding computer's guesses
+        COMPUTER_GUESS_BOARD = [[" "] * 8 for i in range(8)]
+
+        Length_of_ships = [2,3,3,4,5] 
         letters_to_numbers = {'A':0, 'B':1, 'C':2, 'D':3, 'E':4, 'F':5, 'G':6, 'H':7}
 
         def print_board(board):
