@@ -3,9 +3,16 @@
 # ' ' for available space
 # '-' for missed shot
 
-
-
 from random import randint
+
+while True:
+    answer = input('Welcome to Battleships. Would you like to read the rules? (yes/no)')
+    if answer.lower().strip() == 'no':
+        print ('ok')
+        break
+    if answer.lower().strip() == 'yes':
+        print ('These are the rules: bla bla bla')
+        break
 
 while True:
     answer = input('Would you like to play Battleships? (yes/no) ')
